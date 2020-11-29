@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/victor/College/Fall-Quarter/CSS-487/slam/point.h
+ostream
+-
+
+/Users/victor/College/Fall-Quarter/CSS-487/slam/pointcloud.cpp
+pointcloud.h
+/Users/victor/College/Fall-Quarter/CSS-487/slam/pointcloud.h
+
+/Users/victor/College/Fall-Quarter/CSS-487/slam/pointcloud.h
+point.h
+/Users/victor/College/Fall-Quarter/CSS-487/slam/point.h
+vector
+-
+string
+-
+
