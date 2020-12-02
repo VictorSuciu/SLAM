@@ -1,13 +1,10 @@
 //
-// Created by Victor Suciu on 2020-11-28.
+// Created by Victor Suciu on 2020-12-01.
 //
 
-#include "pointcloud.h"
+#include "dataset.h"
 
-PointCloud::PointCloud() {}
-
-
-PointCloud::PointCloud(string path) {
+void DataSet::getPointCloud(PointCloud<PointXYZI>& cloud, const string path) {
     // allocate 4 MB buffer (only ~130*4*4 KB are needed)
     int32_t num = 1000000;
     float *data = (float*)malloc(num*sizeof(float));
@@ -24,24 +21,10 @@ PointCloud::PointCloud(string path) {
     num = fread(data,sizeof(float),num,stream)/4;
 
     for (int32_t i=0; i<num; i++) {
-        points.push_back(Point(*px,*py,*pz,*pr));
+        cloud.push_back(PointXYZI(*px,*py,*pz,*pr));
         px+=4; py+=4; pz+=4; pr+=4;
     }
     free(data);
     fclose(stream);
-}
-
-
-void PointCloud::add(float x, float y, float z, float r) {
-    points.push_back(Point(x, y, z, r));
-}
-
-
-Point PointCloud::get(int index) {
-    return points[index];
-}
-
-int PointCloud::size() {
-    return points.size();
 }
 
