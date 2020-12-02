@@ -14,7 +14,7 @@ using namespace pcl;
 
 int main() {
     // initialize point cloud
-    pcl::PointCloud<pcl::PointXYZI> testCloud;
+    PointCloud<PointXYZI> testCloud;
 
     // populate point cloud
     DataSet::getPointCloud(testCloud, "/PATH_TO_DATASET/dataset/sequences/00/velodyne/000000.bin");
@@ -23,7 +23,7 @@ int main() {
     cout << testCloud.size() << endl;
 
     // iterate through each point in point cloud
-    pcl::PointCloud<pcl::PointXYZI>::iterator it;
+    PointCloud<PointXYZI>::iterator it;
 
     for(it = testCloud.begin(); it != testCloud.end(); it++) {
         cout << *it << endl;
