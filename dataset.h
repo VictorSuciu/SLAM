@@ -7,18 +7,20 @@
 
 
 #include <string>
+#include <fstream>
 #include <pcl/point_cloud.h>
 #include <pcl/point_types.h>
 
 
-using namespace std;
-using namespace pcl;
+//using namespace std;
+//using namespace pcl;
 
 
 class DataSet {
 
 public:
-    static void getPointCloud(PointCloud<PointXYZI>& cloud, const string path);
+    // Generates a point cloud by parsing a bin file provided in the KITTI data set
+    static bool getPointCloud(pcl::PointCloud<pcl::PointXYZI>& cloud, const std::string path);
 };
 
 
